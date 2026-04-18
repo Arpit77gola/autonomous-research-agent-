@@ -6,5 +6,5 @@ tavily-python
 beautifulsoup4
 requests
 python-dotenv
-pydantic
+pydantic>=2.0
 reportlab
