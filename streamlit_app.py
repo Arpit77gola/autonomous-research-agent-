@@ -1,9 +1,20 @@
 import os
 import sys
 import streamlit as st
-from dotenv import load_dotenv
 
-load_dotenv()
+# Local ke liye .env load karo
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    pass
+
+# Streamlit Cloud secrets load karo
+try:
+    for key, value in st.secrets.items():
+        os.environ[key] = str(value)
+except Exception:
+    pass
 
 st.set_page_config(
     page_title="Research Agent",
